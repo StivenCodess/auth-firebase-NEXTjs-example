@@ -21,15 +21,15 @@ Follow these steps to initialize the project:
 
 1. Clone this repository to your local machine:
 ```bash
-  git clone https://github.com/your-username/nextjs-firebase-server-example.git
+git clone https://github.com/your-username/nextjs-firebase-server-example.git
 ```
 2. Navigate to the project directory:
 ```bash
-  cd nextjs-firebase-server-example
+cd nextjs-firebase-server-example
 ```
 3. Install the dependencies:
 ```bash
-   npm install
+npm install
 ```
 4. Set up Firebase credentials: Create a credentials.json file in the root of the project with the service credentials provided by Firebase.
 ```json
@@ -59,7 +59,7 @@ NEXT_PUBLIC_FIREBASE_SECRET_KEY=../credentials.json
 ```
 6. Start the application:
 ```bash
-   npm run dev
+npm run dev
 ```
 **Note:** This project prioritizes functionality over aesthetics and error handling perfection. While the code is functional, it may not represent best practices for error handling or user interface design. Feel free to enhance the code as needed for your specific requirements.
 
