@@ -11,10 +11,10 @@ export async function POST(request, response) {
 	if (authorization?.startsWith("Bearer ")) {
 		const idToken = authorization.split("Bearer ")[1];
 		const decodedToken = await auth().verifyIdToken(idToken);
-
 		if (decodedToken) {
 			//Generate session cookie
-			const expiresIn = 60 * 60 * 24 * 5 * 1000;
+			const expiresIn = 5 * 24 * 60 * 60 * 1000;
+			// const expiresIn = 5 * 60 * 1000;
 			const sessionCookie = await auth().createSessionCookie(idToken, {
 				expiresIn,
 			});
@@ -44,7 +44,6 @@ export async function GET(request) {
 
 	//Use Firebase Admin to validate the session cookie
 	const decodedClaims = await auth().verifySessionCookie(session, true);
-
 	if (!decodedClaims) {
 		return NextResponse.json({ isLogged: false }, { status: 401 });
 	}

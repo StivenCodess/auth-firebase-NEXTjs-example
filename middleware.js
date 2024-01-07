@@ -4,9 +4,7 @@ export async function middleware(request, response) {
 	const session = request.cookies.get("session");
 
 	//Return to /login if don't have a session
-	if (!session) {
-		return NextResponse.redirect(new URL("/login", request.url));
-	}
+	if (!session) return NextResponse.redirect(new URL("/login", request.url));
 
 	//Call the authentication endpoint
 	const responseAPI = await fetch("http://localhost:3000/api/login", {
